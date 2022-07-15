@@ -1,0 +1,18 @@
+<h1 class="title">Search result using Pipe</h1>
+<div style="display: flex; align-items: start; width: 100%;">
+  <div style="background-color: #f1f1f1; flex:0 0 50%; ">
+    <pre>{{searchItem | json}}</pre>
+  </div>
+  <div style="flex: 0 0 50%;">
+    <input type="text" placeholder="Search" [(ngModel)]="SearchText" />
+    <table width="100%">
+        <tbody>
+          <tr *ngFor="let searchItem of searchItem | searchFilter:SearchText">
+            <td><p>{{searchItem.id}}</p></td>
+            <td><p>{{searchItem.name}}</p></td>
+            <td><p>{{searchItem.email}}</p></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
